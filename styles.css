@@ -1,0 +1,236 @@
+:root {
+    --blue: rgb(48, 112, 240);
+    --light-blue: rgb(48, 112, 240, 0.25);
+
+    --light-white: rgb(252, 252, 252, 0.6);
+    --black: rgb(0, 0, 0);
+    --light-black: rgba(11, 26, 53, 0.45);
+
+    --red: rgb(234, 51, 35);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    font-weight: 300;
+    color: var(--black);
+}
+
+.page {
+    height: 100vh;
+    width: 100vw;
+
+    overflow: hidden;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: var(--light-white);
+    backdrop-filter: blur(16px);
+
+    padding: 0rem;
+    
+    position: fixed;
+    top: 0;
+
+    width: 100vw;
+    z-index: 10;
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: var(--light-white);
+    backdrop-filter: blur(16px);
+
+    padding: 1rem 0;
+
+    position: fixed;
+    bottom: 0;
+
+    width: 100vw;
+    z-index: 10;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 700;
+
+    margin: 1.25rem 1rem;
+}
+
+.progress-container {
+    width: 100vw;
+    height: 0.25rem;
+
+    background-color: var(--light-blue);
+
+    position: absolute;
+    bottom: 0;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background-color: var(--blue);
+
+    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.section {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 0 1rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.question {
+    font-size: 16px;
+    font-weight: 700;
+
+    margin-bottom: 1.5rem;
+    margin-left: 0.25rem;
+}
+
+.options-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.option {
+    margin-bottom: 0.5rem;
+}
+
+#clear {
+    margin-bottom: 2rem;
+    margin: 0 0 1rem 0;
+
+    background-color: var(--red);
+    color: white;
+}
+
+#clear:disabled {
+    background-color: var(--light-black);
+}
+
+button {
+    font-size: 14px;
+    font-weight: 300;
+
+    letter-spacing: 0.5px;
+
+    margin: 0 1rem;
+    padding: 0.25rem 0.5rem;
+    
+    border: none;
+    border-radius: 0.25rem;
+
+    background-color: var(--blue);
+    color: white;
+    backdrop-filter: blur(16px);
+
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+button:disabled {
+    background-color: var(--light-black);
+    cursor: not-allowed;
+
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+button:hover {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.btn {
+    font-size: 24px;
+    font-weight: 300;
+
+    width: 36px;
+    height: 36px;
+}
+
+input[type="submit"] {
+    font-size: 16px;
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    padding: 0.5rem 1rem;
+    
+    border: none;
+    border-radius: 0.25rem;
+
+    background-color: var(--blue);
+    color: white;
+    backdrop-filter: blur(16px);
+
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+input[type="submit"]:hover {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+input[type="submit"]:disabled {
+    background-color: var(--light-black);
+    cursor: not-allowed;
+
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.results {
+    height: 100vh;
+    width: 100vw;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.results h1 {
+    font-size: 64px;
+    font-weight: 700;
+
+    margin-bottom: -0.5rem;
+}
+
+.result {
+    font-size: 20px;
+    font-weight: 700;
+
+    margin-bottom: 1.5rem;
+    margin-top: -0.5rem;
+}
+
+.result small {
+    font-size: 18px;
+    font-weight: 500;
+
+    margin: 0 -2px;
+}
